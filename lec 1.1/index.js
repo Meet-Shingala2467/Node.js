@@ -2,7 +2,7 @@ console.log('I AM MEET');
 
 const myObject = {  
     name: 'John',
-    age: 30,
+    age: 35,
     occupation: 'Developer',
     hobbies: ['reading', 'swimming', 'coding'],
     address: {
