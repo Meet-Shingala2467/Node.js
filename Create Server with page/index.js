@@ -26,8 +26,8 @@ const server = http.createServer((req, res) => {
 
 fs.readFile(fileName,(err,pagename)=>{
   if(err){
-      console.log('file is not found');
-      return false;
+    console.log('file is not found');
+    return false;
   }
   res.end(pagename);
 })
