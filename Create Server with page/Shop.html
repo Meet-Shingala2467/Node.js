@@ -3,7 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
+    <title>Shop - My Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .product {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .product h2 {
+            margin: 0;
+            color: #333;
+        }
+        .product p {
+            color: #666;
+        }
+        .product-price {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -13,5 +62,24 @@
         <a href="/blog">Blog</a>
         <a href="/shop">Shop</a>
     </nav>
+    <div class="container">
+        <h1>Welcome to Our Shop</h1>
+        <p>Explore our range of products below:</p>
+        <div class="product">
+            <h2>Product 1</h2>
+            <p>Description of Product 1. This product is great for your needs.</p>
+            <p class="product-price">$19.99</p>
+        </div>
+        <div class="product">
+            <h2>Product 2</h2>
+            <p>Description of Product 2. This product is perfect for everyone.</p>
+            <p class="product-price">$29.99</p>
+        </div>
+        <div class="product">
+            <h2>Product 3</h2>
+            <p>Description of Product 3. A must-have item for your collection.</p>
+            <p class="product-price">$39.99</p>
+        </div>
+    </div>
 </body>
 </html>
