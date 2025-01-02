@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add User</title>
+    <title>Edit User</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
@@ -31,7 +31,7 @@
         td {
             padding: 10px;
         }
-        input[type="text"] {
+        input[type="text"], input[type="date"], select {
             width: 100%;
             padding: 10px;
             border: 1px solid #ddd;
@@ -62,21 +62,35 @@
     </style>
 </head>
 <body>
-    <h1>Add User</h1>
+    <h1>Edit User</h1>
     <div class="form-container">
-        <form method="post" action="/adduser">
+        <form method="post" action="/updateuser">
+            <input type="hidden" name="editid" value="<%= single.id %>">
             <table>
                 <tr>
                     <td>NAME</td>
-                    <td><input type="text" id="username" name="username" required></td>
+                    <td><input type="text" id="username" name="username" value="<%= single.name %>" required></td>
                 </tr>
                 <tr>
                     <td>PHONE</td>
-                    <td><input type="text" id="userphone" name="userphone" required></td>
+                    <td><input type="text" id="userphone" name="userphone" value="<%= single.phone %>" required></td>
+                </tr>
+                <tr>
+                    <td>STATUS</td>
+                    <td>
+                        <select id="userstatus" name="userstatus" required>
+                            <option value="active" <%= single.status === 'active' ? 'selected' : '' %>>Active</option>
+                            <option value="inactive" <%= single.status === 'inactive' ? 'selected' : '' %>>Inactive</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DEADLINE</td>
+                    <td><input type="date" id="userdeadline" name="userdeadline" value="<%= single.deadline %>" required></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td><input type="submit" value="Add User"></td>
+                    <td><input type="submit" value="Update User"></td>
                 </tr>
             </table>
         </form>

@@ -45,6 +45,23 @@
         .add-link:hover {
             text-decoration: underline;
         }
+        .action-button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .action-button:hover {
+            background-color: #45a049; /* Darker green */
+        }
     </style>
 </head>
 <body>
@@ -55,6 +72,9 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Phone</th>
+                <th>Status</th>
+                <th>Deadline</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -63,6 +83,13 @@
                 <td><%= i + 1 %></td>
                 <td><%= val.name %></td>
                 <td><%= val.phone %></td>
+                <td><%= val.status %></td>
+                <td><%= val.deadline %></td>
+
+                <td>
+                    <button class="action-button"><a href="/deletuser?deletId=<%= val.id %>" style="color: white; text-decoration: none;">Delete</a></button>
+                    <button class="action-button"><a href="/edituser?editId=<%= val.id %>" style="color: white; text-decoration: none;">Edit</a></button>
+                </td>
             </tr>
           <% }) %>
         </tbody>
