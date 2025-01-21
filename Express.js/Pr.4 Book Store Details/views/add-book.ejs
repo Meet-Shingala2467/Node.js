@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a New Book Type</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+          background: url('https://img.lovepik.com/bg/20231228/Captivating-A-Showcase-of-Newspapers-and-Books-on-a-Table_2496752_wh860.png');
+            background-size: cover;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #ff6347;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        input {
+            padding: 12px;
+            border: 1px solid #3e4c59;
+            border-radius: 6px;
+            font-size: 16px;
+            background-color: #34495e;
+            color: #ffffff;
+        }
+
+        input[type="checkbox"] {
+            width: 25px;
+            height: 25px;
+            background-color: #2c3e50;
+        }
+
+        button {
+            background-color: #ff6347;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e84c3d;
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .nav-links a {
+            color: #ff6347;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkbox-group label {
+            margin-left: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1><i class="fas fa-bookmark"></i> Create a New Book Type</h1>
+        <form action="/add-book" method="POST">
+            <div class="form-group">
+                <label for="bookTitle">Book Title:</label>
+                <input type="text" id="bookTitle" name="bookName" required>
+            </div>
+            <div class="form-group">
+                <label for="writerName">Author Name:</label>
+                <input type="text" id="writerName" name="authorName" required>
+            </div>
+            <div class="form-group">
+                <label for="bookPrice">Price:</label>
+                <input type="number" id="bookPrice" name="price" step="0.01" required>
+            </div>
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="activeStatus" name="isActive" checked>
+                <label for="activeStatus">Active Status</label>
+            </div>
+            <button type="submit">Create Book Type</button>
+        </form>
+        <div class="nav-links">
+            <a href="/books">View All Book Types</a>
+        </div>
+    </div>
+</body>
+
+</html>

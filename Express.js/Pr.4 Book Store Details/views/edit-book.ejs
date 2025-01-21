@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Book Info</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(to right, #f8cdda, #1d2b64);
+        max-width: 600px;
+        background: url("https://thumbs.dreamstime.com/b/traditional-study-boasts-stunning-built-bookshelves-showcase-vast-collection-books-decor-generated-ai-285368443.jpg");
+        background-size: cover;
+        margin: 0 auto;
+        padding: 20px;
+        color: #333;
+      }
+      .form-container {
+        background-color: rgba(255, 255, 255, 0.8); /* Made background transparent */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+        margin-top: 70px; /* Added margin at the top */
+        text-align: center; /* Centered the content */
+      }
+      .form-container:hover {
+        transform: scale(1.02);
+      }
+      h1 {
+        color: #ff6b6b;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      label {
+        font-weight: bold;
+        color: #495057;
+        font-size: 1rem;
+      }
+      input {
+        padding: 10px;
+        border: 2px solid #ff6b6b;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: border-color 0.3s;
+      }
+      input:focus {
+        border-color: #ff4757;
+        outline: none;
+      }
+      .checkbox-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      button {
+        background-color: #ff6b6b;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #ff4757;
+      }
+      .navigation-links {
+        margin-top: 20px;
+        text-align: center;
+      }
+      .navigation-links a {
+        color: #ff6b6b;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1rem;
+      }
+      .navigation-links a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1><i class="fas fa-pencil-alt"></i> Update Book Info..</h1>
+      <form action="/edit/<%= book.id %>" method="POST">
+        <div class="input-group">
+          <label for="title">Book Title:</label>
+          <input
+            type="text"
+            id="title"
+            name="bookName"
+            value="<%= book.bookName %>"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="writer">Author Name:</label>
+          <input
+            type="text"
+            id="writer"
+            name="authorName"
+            value="<%= book.authorName %>"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="cost">Price:</label>
+          <input
+            type="number"
+            id="cost"
+            name="price"
+            step="0.01"
+            value="<%= book.price %>"
+            required
+          />
+        </div>
+        <div class="input-group checkbox-container">
+          <label for="activeStatus">Active Status:</label>
+          <input type="checkbox" id="activeStatus" name="isActive" <%=
+          book.isActive ? 'checked' : '' %>>
+        </div>
+        <button type="submit">Save Changes</button>
+      </form>
+      <div class="navigation-links">
+        <a href="/books">Back to Book List</a>
+      </div>
+    </div>
+  </body>
+</html>
