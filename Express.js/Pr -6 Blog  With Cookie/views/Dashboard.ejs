@@ -1,0 +1,138 @@
+<%- include('Header') %>
+
+<section id="blog">
+    <% if (blogs.length === 0) { %>
+        <h2 align="center" style="margin-top: 3%; color: #555; font-family: Arial, sans-serif;">No Blog Added on Dashboard</h2>
+    <% } else { %>
+        <h2 align="center" style="margin-top: 3%; color: #333; font-family: 'Roboto', sans-serif; font-weight: 700;">Blog Repository</h2>
+        <div class="container">
+            <% blogs.map((blog) => { %>
+                <div class="blog-posts">
+                    <div class="blog-card">
+                        <div class="image">
+                            <img src="<%= blog?.image %>" alt="Blog image">
+                        </div>
+                        <div class="content">
+                            <h3 class="title"><%= blog?.title %></h3>
+                            <p class="author">By <%= blog?.author %></p>
+                            <p class="description"><%= blog?.description.slice(0, 90) %>...</p>
+                            <a href="/readmore?readmoreId=<%= blog?.id %>" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    <% } %>
+</section>
+
+<%- include('Footer') %>
+
+<style>
+    /* General Container Styles */
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1280px;
+        justify-content: center;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    /* Blog Card */
+    .blog-card {
+        width: 340px;
+        height: 480px;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s, box-shadow 0.3s;
+        background-color: #fff;
+        margin: 15px;
+    }
+
+    .blog-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Image Section */
+    .blog-card .image {
+        height: 60%;
+        overflow: hidden;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .blog-card .image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .blog-card:hover .image img {
+        transform: scale(1.05);
+    }
+
+    /* Content Section */
+    .blog-card .content {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 40%;
+    }
+
+    .blog-card .title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .blog-card .author {
+        font-size: 14px;
+        color: #777;
+        margin-bottom: 15px;
+    }
+
+    .blog-card .description {
+        font-size: 15px;
+        color: #555;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+
+    /* Read More Button */
+    .blog-card .read-more {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: 25px;
+        text-align: center;
+        transition: background-color 0.3s ease, transform 0.2s;
+        align-self: flex-start;
+    }
+
+    .blog-card .read-more:hover {
+        background-color: #43a047;
+        transform: scale(1.05);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .blog-card {
+            width: 100%;
+            height: auto;
+        }
+
+        .container {
+            gap: 15px;
+        }
+    }
+</style>

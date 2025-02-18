@@ -1,0 +1,35 @@
+<%- include('Header') %>
+<div class="page-wrapper">
+    <h1 class="text-center mb-4 pt-4" style="font-family: 'Roboto', sans-serif; font-weight: 700; color: #333;">Modify Blog Content</h1>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card card-hover" style="box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); border-radius: 15px;">
+                    <div class="box bg-light" style="padding: 20px; border-radius: 15px;">
+                        <form class="p-4" action="/updateBlog" method="post" enctype="multipart/form-data" style="font-family: 'Roboto', sans-serif;">
+                            <div class="mb-3">
+                                <label class="form-label" style="font-weight: 600; color: #555;">Title:</label>
+                                <input type="text" class="form-control" name="title" value="<%= single.title %>" required style="border-radius: 10px;">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" style="font-weight: 600; color: #555;">Description:</label>
+                                <textarea class="form-control" name="description" required style="border-radius: 10px;"> <%= single.description %> </textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" style="font-weight: 600; color: #555;">Author:</label>
+                                <input type="text" class="form-control" name="author" value="<%= single.author %>" required style="border-radius: 10px;">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" style="font-weight: 600; color: #555;">Image:</label>
+                                <input type="file" class="form-control" name="image" style="border-radius: 10px;">
+                            </div>
+                            <input type="hidden" name="editid" value="<%= single._id %>">
+                            <button type="submit" class="btn btn-primary" style="background-color: #4caf50; border: none; border-radius: 25px; padding: 10px 20px; font-weight: 600; transition: background-color 0.3s;">Repost with Changes</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('Footer') %>
