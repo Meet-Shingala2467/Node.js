@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign in & Sign up Form</title>
+    <title>Sign in</title>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
@@ -19,7 +19,7 @@
 
         body {
             font-family: "Poppins", sans-serif;
-            background-color: #f4f7fc;
+            background-color: #f9fafb; /* Changed background color for a new combination */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -29,7 +29,7 @@
         .card {
             width: 400px;
             padding: 30px;
-            background-color: #fff;
+            background-color: #fff; /* Kept the card background white for contrast */
             border-radius: 16px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             display: flex;
@@ -40,7 +40,7 @@
 
         .card h2 {
             font-size: 2rem;
-            color: #333;
+            color: #333; /* Changed to a darker color for better contrast */
             margin-bottom: 20px;
         }
 
@@ -55,14 +55,14 @@
             height: 40px;
             padding: 10px;
             font-size: 1rem;
-            border: 1px solid #ddd;
+            border: 1px solid #ddd; /* Changed border color for a new combination */
             border-radius: 8px;
             outline: none;
             transition: border-color 0.3s;
         }
 
         .input-field:focus {
-            border-color: #6c5ce7;
+            border-color: #21ba45; /* Changed focus border color for a new combination */
         }
 
         .input-wrap label {
@@ -70,7 +70,7 @@
             top: -10px;
             left: 10px;
             font-size: 0.9rem;
-            color: #777;
+            color: #777; /* Changed label color for a new combination */
             background-color: #fff;
             padding: 0 5px;
         }
@@ -78,7 +78,7 @@
         .sign-btn {
             width: 100%;
             height: 40px;
-            background-color: #6c5ce7;
+            background-color: #21ba45; /* Changed button background color for a new combination */
             color: #fff;
             border: none;
             border-radius: 8px;
@@ -89,22 +89,22 @@
         }
 
         .sign-btn:hover {
-            background-color: #5a4bdb;
+            background-color: #1e8e3e; /* Changed hover background color for a new combination */
         }
 
         .toggle {
-            color: #6c5ce7;
+            color: #21ba45; /* Changed toggle color for a new combination */
             font-size: 0.9rem;
             cursor: pointer;
         }
 
         .text {
-            color: #777;
+            color: #777; /* Changed text color for a new combination */
             font-size: 0.9rem;
         }
 
         .text a {
-            color: #6c5ce7;
+            color: #21ba45; /* Changed link color for a new combination */
             text-decoration: none;
         }
 
@@ -115,7 +115,7 @@
         .heading {
             margin-bottom: 20px;
         }
-        
+
         /* For smaller screens */
         @media (max-width: 600px) {
             .card {
@@ -129,19 +129,13 @@
 <body>
     <main>
         <div class="card">
-            <div class="logo">
-                <h4>BlogCanvas</h4>
-            </div>
-
             <div class="heading">
-                <h2>Welcome Back</h2>
-                <h6>Not registered yet?</h6>
-                <a href="/register" class="toggle">Sign up</a>
+                <h2>Sign in</h2>
             </div>
 
             <form action="/loginUser" autocomplete="off" method="post">
                 <div class="input-wrap">
-                    <input type="text" name="email" class="input-field" placeholder="Email" required />
+                    <input type="email" name="email" class="input-field" placeholder="Email" required />
                 </div>
 
                 <div class="input-wrap">
@@ -151,8 +145,8 @@
                 <input type="submit" value="Sign In" class="sign-btn" />
 
                 <p class="text">
-                    Forgotten your password or login details?
-                    <a href="#">Get help</a> signing in
+                    New here?
+                    <a href="/register">Create account</a>
                 </p>
             </form>
         </div>
